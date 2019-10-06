@@ -23,8 +23,8 @@ export class LocalStorageService {
 
   }
   public findAlbumOnLocalStorage(id:string):boolean{
-    console.log(this.storage.get(this.STORAGE_KEY))
-    return this.storage.get(this.STORAGE_KEY).length > 0 ? this.storage.get(this.STORAGE_KEY).some(x => {return x.id === id}): false;
+
+    return this.storage.get(this.STORAGE_KEY) != undefined ? this.storage.get(this.STORAGE_KEY).some(x => {return x.id === id}): false;
   }
   public loadFavorites():Array<any>{
     return [...this.storage.get(this.STORAGE_KEY)] || null;

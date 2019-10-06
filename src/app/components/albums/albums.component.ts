@@ -82,7 +82,6 @@ export class AlbumsComponent implements OnInit {
     );
   }
   searchAlbum() {
-    console.log(this.searchForm.valid);
     if (this.searchForm.valid) {
       this.albums =
         this.searchForm.value["search"].length === 1
@@ -108,9 +107,9 @@ export class AlbumsComponent implements OnInit {
 
   onFavorite(item: Albums): void {
     item.isFavorite = !item.isFavorite;
-    if(this.areFavorites){
+    if (this.areFavorites) {
       const foundId = this.albums.findIndex(x => x.id === item.id);
-      this.albums.splice(foundId,1)
+      this.albums.splice(foundId, 1);
       this.showZeroFavorites = this.albums.length === 0;
     }
     this.localStorageService.storeOnLocalStorage(item);
