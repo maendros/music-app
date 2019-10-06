@@ -1,0 +1,11 @@
+<div style="text-align:center">
+  <h1>{{ title }}</h1>
+</div>
+
+
+<nav id="menu">
+    <ul>
+      <li><a routerLink='/albums' >Home</a></li>
+      <li><a [routerLink]="['/favorites']" [state]='areFavorites'>Favorites</a></li>
+    </ul>
+  </nav>

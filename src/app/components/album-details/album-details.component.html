@@ -1,0 +1,22 @@
+<article class="album">
+  <div class="album-image album-item">
+    <img src="{{ album.images }}" />
+  </div>
+  <div class="album-info album-item">
+    <div class="album-title">‘{{ album.title }}’</div>
+    <h3>{{ album.artist }}</h3>
+    <h4>Release Date: {{ album.releaseDate }}</h4>
+
+ 
+
+  
+    <h4>Price: {{album.price}} </h4>
+
+      <h4>More Info at: <a href="{{album.link}}">Link</a> </h4>
+        <h4>Rights: {{album.rights}} </h4>
+        <div class="favorite" (click)="onFavorite(album)">
+            <div *ngIf="!album.isFavorite"><i class="far fa-heart"></i></div>
+            <div *ngIf="album.isFavorite"><i class="fas fa-heart"></i></div>
+          </div>
+  </div>
+</article>

@@ -1,0 +1,44 @@
+<div class="loader" *ngIf="isLoading"></div>
+<div class="wrap">
+  <form [formGroup]="searchForm" class="search">
+    <input
+      [ngClass]="{ 'invalid-input': !searchForm.valid }"
+      type="text"
+      class="searchTerm"
+      placeholder="Search for Album Name"
+      (keydown.enter)="searchAlbum()"
+      id="search"
+      formControlName="search"
+      appCustomDirective
+      autocomplete="off"
+    />
+    <button type="submit" class="searchButton" (click)="searchAlbum()">
+      <i class="fa fa-search"></i>
+    </button>
+  </form>
+  <div class="error-message" *ngIf="!searchForm.valid">
+    Please remove symbols and write at least 3 characters
+  </div>
+</div>
+
+<section class="albums">
+    <div class="zero-favorites" *ngIf="showZeroFavorites">You have no favorites Albums at the moment.</div>
+  <div
+    class="album-card"
+    *ngFor="let album of albums"
+    (click)="navigateToAlbumDetails(album)"
+  >
+    <div class="album-image album-item">
+      <img src="{{ album.images }}" />
+    </div>
+    <div class="album-info album-item" >
+      <div class="album-title">‘{{ album.title }}’</div>
+      <h3>{{ album.artist }}</h3>
+      <h4>Release Date: {{ album.releaseDate }}</h4>
+      <div class="favorite" (click)="onFavorite(album,$event.stopPropagation())">
+        <div *ngIf="!album.isFavorite"><i class="far fa-heart"></i></div>
+        <div *ngIf="album.isFavorite"><i class="fas fa-heart"></i></div>
+      </div>
+    </div>
+  </div>
+</section>

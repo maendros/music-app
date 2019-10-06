@@ -1,0 +1,166 @@
+
+.loader 
+    border: 16px solid #f3f3f3
+    border-radius: 50%
+    border-top: 16px solid #C9D6FF
+    width: 120px
+    height: 120px
+    position: absolute
+    left: 47%
+    top: 30%
+    -webkit-animation: spin 2s linear infinite
+    animation: spin 0.5s linear infinite
+
+
+/* Safari */
+@-webkit-keyframes spin 
+  0%  
+      -webkit-transform: rotate(0deg)
+  100%  
+      -webkit-transform: rotate(360deg)
+
+
+@keyframes spin 
+  0%  
+      transform: rotate(0deg)
+  100%  
+      transform: rotate(360deg)
+
+.albums
+    display: flex
+    flex-wrap: wrap
+    width: 85% 
+    margin: 5% auto
+    padding: 0
+    
+
+.album-card
+    margin: 1%
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
+    align-content: flex-start 
+    flex-wrap: wrap
+    flex: 0 29%
+    height: 25vh
+    background: transparent
+    overflow: hidden
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+    transition: all .2s ease-in-out
+
+.album-card:hover
+    transform: scale(1.02)
+
+    
+.album-item
+    flex-direction: column
+    padding: 2%
+    flex: 1 46%
+    cursor: pointer
+    align-self: auto 
+
+.album-image img
+  max-width: 100%
+
+.album-info 
+  margin-top: auto
+  max-width: 55%
+
+.album-title
+ 
+    font-size: 1.2em
+    font-weight: 700
+    line-height: 1.5rem
+    color: #000
+h3
+        color: #d32531
+
+
+
+.search 
+  width: 100%
+  position: relative
+  display: flex
+
+
+.searchTerm 
+  width: 100%
+  border: 3px solid #448ccb
+  border-right: none
+  padding: 5px
+  height: 20px
+  border-radius: 5px 0 0 5px
+  outline: none
+  color: #9DBFAF
+
+
+.searchTerm:focus
+  color: #448ccb
+
+
+.searchButton 
+  width: 40px
+  height: 36px
+  border: 1px solid #448ccb
+  background: #448ccb
+  text-align: center
+  color: #fff
+  border-radius: 0 5px 5px 0
+  cursor: pointer
+  font-size: 20px
+
+
+/*Resize the wrap to see the search bar change!*/
+.wrap
+    margin: 4% auto 0
+    width: 20%
+    position: relative
+    width: 20%
+
+.invalid-input
+      border: 3px solid red
+
+.error-message
+    color: red
+    position: absolute
+    font-size: 1.2em
+
+.fa-heart
+    color: yellow
+    font-size: 1.6em
+    position: relative
+
+.zero-favorites
+    font-size: 1.2em
+    font-weight: 700
+
+    margin: 3% auto
+
+
+
+@media (max-width: 1440px)
+.album-card  
+  flex: 0 45%
+@media (max-width: 920px) 
+.wrap
+   width: 70%
+.albums
+   flex-direction: row
+.album-card
+   flex: 1 auto
+   flex-direction: row
+   height: 61vh
+.album-item
+   text-align: center
+   margin: 2% auto 0
+   flex: 1 auto
+.album-title
+ 
+    font-size: 1em
+    font-weight: 700
+    line-height: 1.2em
+    color: #000
+  
+
+
+
